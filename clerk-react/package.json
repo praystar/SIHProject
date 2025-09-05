@@ -7,10 +7,19 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prisma:migrate": "npx prisma migrate dev --name init",
+    "prisma:generate": "npx prisma generate",
+    "seed": "node prisma/seed.js",
+    "start": "node index.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.46.1",
+    "@prisma/client": "^5.15.0",
+    "csv-parser": "^3.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "recharts": "^3.1.2"
@@ -24,6 +33,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^16.3.0",
+    "prisma": "^5.15.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.39.1",
     "vite": "^7.1.2"
