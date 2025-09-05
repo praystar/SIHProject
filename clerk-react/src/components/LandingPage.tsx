@@ -4,7 +4,6 @@ import { SignInButton } from '@clerk/clerk-react';
 const LandingPage: React.FC = () => {
   return (
     <div style={{
-      background: 'linear-gradient(135deg, #0c1445 0%, #1a237e 50%, #283593 100%)',
       minHeight: '100vh',
       height: '100vh',
       width: '100vw',
@@ -15,302 +14,487 @@ const LandingPage: React.FC = () => {
       margin: 0,
       padding: 0,
       display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center'
+      fontFamily: '"Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+      background: 'linear-gradient(135deg, #1e2530 0%, #2a3441 50%, #343d4f 100%)',
+      color: '#e2e8f0'
     }}>
-      {/* Left Section - Text */}
+      {/* Subtle background elements */}
       <div style={{
-        flex: '0 0 30%',
-        background: 'white',
+        position: 'absolute',
+        top: '15%',
+        left: '8%',
+        width: '120px',
+        height: '120px',
+        background: 'linear-gradient(45deg, rgba(59, 130, 246, 0.05), rgba(96, 165, 250, 0.08))',
+        borderRadius: '20px',
+        transform: 'rotate(12deg)',
+        zIndex: 1
+      }} />
+
+      <div style={{
+        position: 'absolute',
+        top: '60%',
+        right: '12%',
+        width: '80px',
+        height: '80px',
+        background: 'linear-gradient(45deg, rgba(168, 162, 255, 0.06), rgba(196, 181, 253, 0.04))',
+        borderRadius: '12px',
+        transform: 'rotate(-8deg)',
+        zIndex: 1
+      }} />
+
+      {/* Left Section - Content */}
+      <div style={{
+        flex: '0 0 55%',
         height: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignItems: 'center',
         justifyContent: 'center',
-        padding: '40px',
-        position: 'relative'
+        padding: '80px 60px',
+        position: 'relative',
+        zIndex: 2
       }}>
         <div style={{
-          fontSize: '4rem',
-          fontWeight: 'bold',
-          color: '#1a237e',
-          textAlign: 'center',
-          lineHeight: 1,
-          marginBottom: '40px',
-          letterSpacing: '2px'
+          maxWidth: '520px'
         }}>
-          <div>STOP</div>
-          <div>OCEAN</div>
-          <div>PLASTIC</div>
-          <div>POLLUTION</div>
-        </div>
-        
-        {/* Fish swimming towards right */}
-        <div style={{
-          display: 'flex',
-          gap: '8px',
-          marginBottom: '20px'
-        }}>
-          {[...Array(8)].map((_, i) => (
-            <div
-              key={i}
-              style={{
-                width: '20px',
-                height: '15px',
-                background: '#ff6b35',
-                borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-                transform: `translateX(${i * 5}px)`,
-                animation: `swim 2s ease-in-out infinite ${i * 0.1}s`
-              }}
-            />
-          ))}
-        </div>
+          {/* Professional header */}
+          <div style={{
+            display: 'flex',
+            alignItems: 'center',
+            marginBottom: '32px'
+          }}>
+            <div style={{
+              width: '4px',
+              height: '40px',
+              background: 'linear-gradient(180deg, #3b82f6, #2563eb)',
+              borderRadius: '2px',
+              marginRight: '16px'
+            }} />
+            <span style={{
+              fontSize: '14px',
+              fontWeight: '600',
+              color: '#9ca3af',
+              textTransform: 'uppercase',
+              letterSpacing: '1.5px'
+            }}>
+              Environmental Initiative
+            </span>
+          </div>
 
-        <SignInButton mode="modal">
-          <button style={{
-            background: '#1a237e',
-            color: 'white',
-            border: 'none',
-            padding: '16px 32px',
-            fontSize: '18px',
-            fontWeight: 'bold',
-            borderRadius: '50px',
-            cursor: 'pointer',
-            boxShadow: '0 8px 25px rgba(0,0,0,0.3)',
-            transition: 'all 0.3s ease',
-            textTransform: 'uppercase',
-            letterSpacing: '1px',
-            marginTop: '20px'
-          }}
-          onMouseOver={(e) => {
-            e.currentTarget.style.transform = 'translateY(-2px)';
-            e.currentTarget.style.boxShadow = '0 12px 35px rgba(0,0,0,0.4)';
-            e.currentTarget.style.background = '#0d47a1';
-          }}
-          onMouseOut={(e) => {
-            e.currentTarget.style.transform = 'translateY(0)';
-            e.currentTarget.style.boxShadow = '0 8px 25px rgba(0,0,0,0.3)';
-            e.currentTarget.style.background = '#1a237e';
-          }}
-          >
-            Login
-          </button>
-        </SignInButton>
+          <h1 style={{
+            fontSize: '4rem',
+            fontWeight: '800',
+            color: '#f8fafc',
+            lineHeight: 1.1,
+            marginBottom: '24px',
+            letterSpacing: '-0.02em'
+          }}>
+            Combat Ocean
+            <br />
+            <span style={{
+              background: 'linear-gradient(135deg, #3b82f6, #2563eb, #1d4ed8)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
+            }}>
+              Plastic Pollution
+            </span>
+          </h1>
+          
+          <p style={{
+            fontSize: '20px',
+            color: '#cbd5e1',
+            lineHeight: 1.6,
+            marginBottom: '40px',
+            fontWeight: '400'
+          }}>
+            Join the global movement to protect our oceans. Advanced monitoring, 
+            data-driven solutions, and collaborative action for a sustainable future.
+          </p>
+
+          
+
+          <SignInButton mode="modal">
+            <button style={{
+              background: 'linear-gradient(135deg, #1e2530 0%, #374151 50%, #4b5563 100%)',
+              color: '#f8fafc',
+              border: '1px solid #4b5563',
+              padding: '16px 40px',
+              fontSize: '16px',
+              fontWeight: '600',
+              borderRadius: '8px',
+              cursor: 'pointer',
+              boxShadow: '0 10px 25px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15)',
+              transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+              textTransform: 'none',
+              letterSpacing: '0.3px',
+              minWidth: '200px',
+              position: 'relative',
+              overflow: 'hidden'
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.transform = 'translateY(-2px)';
+              e.currentTarget.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.3), 0 8px 15px rgba(59, 130, 246, 0.2)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #374151 0%, #4b5563 50%, #6b7280 100%)';
+              e.currentTarget.style.borderColor = '#3b82f6';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.transform = 'translateY(0)';
+              e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 0, 0, 0.25), 0 4px 10px rgba(0, 0, 0, 0.15)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #1e2530 0%, #374151 50%, #4b5563 100%)';
+              e.currentTarget.style.borderColor = '#4b5563';
+            }}
+            >
+              Access Dashboard
+            </button>
+          </SignInButton>
+
+          <div style={{
+            marginTop: '24px',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '16px'
+          }}>
+            <div style={{
+              display: 'flex',
+              gap: '8px'
+            }}>
+              {[...Array(5)].map((_, i) => (
+                <div
+                  key={i}
+                  style={{
+                    width: '4px',
+                    height: '4px',
+                    background: '#3b82f6',
+                    borderRadius: '50%',
+                    opacity: 0.3 + (i * 0.15),
+                    animation: `professional-pulse ${2 + i * 0.3}s ease-in-out infinite ${i * 0.2}s`
+                  }}
+                />
+              ))}
+            </div>
+            <span style={{
+              fontSize: '14px',
+              color: '#9ca3af',
+              fontWeight: '500'
+            }}>
+              Real-time monitoring active
+            </span>
+          </div>
+        </div>
       </div>
 
-      {/* Right Section - Ocean Scene */}
+      {/* Right Section - Dashboard-style Ocean Visualization */}
       <div style={{
-        flex: '0 0 70%',
+        flex: '0 0 45%',
         height: '100%',
         position: 'relative',
-        background: 'linear-gradient(180deg, #4fc3f7 0%, #29b6f6 20%, #1976d2 40%, #0d47a1 60%, #0a3d91 80%, #0c1445 100%)',
-        overflow: 'hidden'
+        background: 'linear-gradient(145deg, #1f2937 0%, #374151 30%, #4b5563 60%, #6b7280 100%)',
+        overflow: 'hidden',
+        zIndex: 2,
+        borderLeft: '1px solid #4b5563'
       }}>
-        {/* Ocean layers */}
+        {/* Dashboard-style grid overlay */}
         <div style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          background: 'linear-gradient(180deg, rgba(79, 195, 247, 0.3) 0%, rgba(41, 182, 246, 0.4) 20%, rgba(25, 118, 210, 0.5) 40%, rgba(13, 71, 161, 0.6) 60%, rgba(10, 61, 145, 0.7) 80%, rgba(12, 20, 69, 0.8) 100%)'
+          backgroundImage: `
+            linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px)
+          `,
+          backgroundSize: '40px 40px',
+          zIndex: 1
         }} />
 
-        {/* Marine Life */}
+        {/* Dashboard-style data visualization elements */}
         <div style={{
           position: 'absolute',
           top: '20%',
-          left: '10%',
-          width: '30px',
-          height: '20px',
-          background: '#ff6b9d',
-          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-          animation: 'swim 3s ease-in-out infinite'
-        }} />
-        
-        <div style={{
-          position: 'absolute',
-          top: '30%',
-          left: '20%',
-          width: '25px',
-          height: '18px',
-          background: '#ffd54f',
-          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-          animation: 'swim 2.5s ease-in-out infinite 0.5s'
-        }} />
-
-        <div style={{
-          position: 'absolute',
-          top: '40%',
           left: '15%',
-          width: '22px',
-          height: '16px',
-          background: '#81c784',
-          borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
-          animation: 'swim 2.8s ease-in-out infinite 1s'
-        }} />
-
-        {/* Coral formations */}
-        <div style={{
-          position: 'absolute',
-          bottom: '20%',
-          left: '5%',
-          width: '40px',
-          height: '60px',
-          background: 'linear-gradient(45deg, #ff6b9d, #ff8a80)',
-          borderRadius: '50% 50% 50% 50% / 80% 80% 20% 20%',
-          transform: 'rotate(-15deg)'
-        }} />
-
-        <div style={{
-          position: 'absolute',
-          bottom: '15%',
-          right: '10%',
-          width: '35px',
-          height: '50px',
-          background: 'linear-gradient(45deg, #81c784, #a5d6a7)',
-          borderRadius: '50% 50% 50% 50% / 80% 80% 20% 20%',
-          transform: 'rotate(20deg)'
-        }} />
-
-        {/* Seaweed */}
-        <div style={{
-          position: 'absolute',
-          bottom: '10%',
-          left: '30%',
-          width: '8px',
-          height: '80px',
-          background: 'linear-gradient(180deg, #4caf50, #66bb6a)',
-          borderRadius: '4px',
-          transform: 'rotate(-5deg)'
-        }} />
-
-        <div style={{
-          position: 'absolute',
-          bottom: '5%',
-          right: '25%',
-          width: '6px',
-          height: '70px',
-          background: 'linear-gradient(180deg, #8bc34a, #aed581)',
-          borderRadius: '3px',
-          transform: 'rotate(8deg)'
-        }} />
-
-        {/* Plastic Pollution */}
-        <div style={{
-          position: 'absolute',
-          top: '25%',
-          right: '20%',
-          width: '30px',
-          height: '50px',
-          background: 'rgba(255, 255, 255, 0.8)',
-          borderRadius: '5px',
-          transform: 'rotate(15deg)',
-          boxShadow: '0 4px 8px rgba(0,0,0,0.3)'
+          width: '80px',
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.8), transparent)',
+          animation: 'data-scan 3s ease-in-out infinite'
         }} />
 
         <div style={{
           position: 'absolute',
           top: '35%',
-          right: '30%',
-          width: '25px',
-          height: '40px',
-          background: 'rgba(255, 255, 255, 0.7)',
-          borderRadius: '3px',
-          transform: 'rotate(-10deg)',
-          boxShadow: '0 3px 6px rgba(0,0,0,0.2)'
+          right: '20%',
+          width: '60px',
+          height: '2px',
+          background: 'linear-gradient(90deg, transparent, rgba(168, 162, 255, 0.6), transparent)',
+          animation: 'data-scan 4s ease-in-out infinite 1s'
         }} />
+
+        {/* Alert-style pollution indicators matching dashboard */}
+        <div style={{
+          position: 'absolute',
+          top: '25%',
+          left: '20%',
+          width: '12px',
+          height: '12px',
+          border: '2px solid #ef4444',
+          borderRadius: '50%',
+          background: 'rgba(239, 68, 68, 0.2)',
+          animation: 'warning-pulse 2s ease-in-out infinite'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '4px',
+            height: '4px',
+            background: '#ef4444',
+            borderRadius: '50%',
+            transform: 'translate(-50%, -50%)'
+          }} />
+        </div>
 
         <div style={{
           position: 'absolute',
-          top: '50%',
-          right: '15%',
-          width: '20px',
-          height: '35px',
-          background: 'rgba(255, 255, 255, 0.6)',
-          borderRadius: '2px',
-          transform: 'rotate(25deg)',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.2)'
-        }} />
-
-        {/* Plastic bags */}
-        <div style={{
-          position: 'absolute',
-          top: '40%',
-          right: '40%',
-          width: '35px',
-          height: '45px',
-          background: 'rgba(255, 255, 255, 0.5)',
-          borderRadius: '8px',
-          transform: 'rotate(-20deg)',
-          boxShadow: '0 5px 10px rgba(0,0,0,0.3)'
-        }} />
+          top: '45%',
+          right: '25%',
+          width: '10px',
+          height: '10px',
+          border: '2px solid #f59e0b',
+          borderRadius: '50%',
+          background: 'rgba(245, 158, 11, 0.2)',
+          animation: 'warning-pulse 2.5s ease-in-out infinite 0.8s'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '3px',
+            height: '3px',
+            background: '#f59e0b',
+            borderRadius: '50%',
+            transform: 'translate(-50%, -50%)'
+          }} />
+        </div>
 
         <div style={{
           position: 'absolute',
           top: '60%',
+          left: '30%',
+          width: '8px',
+          height: '8px',
+          border: '1px solid #10b981',
+          borderRadius: '50%',
+          background: 'rgba(16, 185, 129, 0.2)',
+          animation: 'warning-pulse 3s ease-in-out infinite 1.5s'
+        }}>
+          <div style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            width: '2px',
+            height: '2px',
+            background: '#10b981',
+            borderRadius: '50%',
+            transform: 'translate(-50%, -50%)'
+          }} />
+        </div>
+
+        {/* Marine life indicators with dashboard colors */}
+        <div style={{
+          position: 'absolute',
+          top: '30%',
+          left: '40%',
+          width: '16px',
+          height: '10px',
+          background: 'rgba(168, 162, 255, 0.3)',
+          borderRadius: '8px 4px 4px 8px',
+          animation: 'marine-drift 6s ease-in-out infinite',
+          border: '1px solid rgba(168, 162, 255, 0.5)'
+        }}>
+          <div style={{
+            position: 'absolute',
+            right: '-6px',
+            top: '50%',
+            width: '0',
+            height: '0',
+            borderLeft: '6px solid rgba(168, 162, 255, 0.3)',
+            borderTop: '3px solid transparent',
+            borderBottom: '3px solid transparent',
+            transform: 'translateY(-50%)'
+          }} />
+        </div>
+
+        <div style={{
+          position: 'absolute',
+          top: '50%',
           right: '35%',
-          width: '28px',
-          height: '38px',
-          background: 'rgba(255, 255, 255, 0.4)',
-          borderRadius: '6px',
-          transform: 'rotate(30deg)',
-          boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
-        }} />
+          width: '14px',
+          height: '8px',
+          background: 'rgba(59, 130, 246, 0.3)',
+          borderRadius: '7px 3px 3px 7px',
+          animation: 'marine-drift 5s ease-in-out infinite 2s',
+          border: '1px solid rgba(59, 130, 246, 0.5)'
+        }}>
+          <div style={{
+            position: 'absolute',
+            right: '-5px',
+            top: '50%',
+            width: '0',
+            height: '0',
+            borderLeft: '5px solid rgba(59, 130, 246, 0.3)',
+            borderTop: '2px solid transparent',
+            borderBottom: '2px solid transparent',
+            transform: 'translateY(-50%)'
+          }} />
+        </div>
 
-        {/* Microplastics (small white circles) */}
-        {[...Array(15)].map((_, i) => (
-          <div
-            key={i}
-            style={{
-              position: 'absolute',
-              top: `${20 + (i * 5)}%`,
-              left: `${60 + (i * 2)}%`,
-              width: '4px',
-              height: '4px',
-              background: 'rgba(255, 255, 255, 0.6)',
-              borderRadius: '50%',
-              animation: `float 3s ease-in-out infinite ${i * 0.2}s`
-            }}
-          />
-        ))}
-
-        {/* Plastic fork and spoon */}
+        {/* Dashboard-style seaweed/coral */}
         <div style={{
           position: 'absolute',
-          top: '45%',
-          right: '50%',
-          width: '15px',
-          height: '3px',
-          background: 'rgba(255, 255, 255, 0.7)',
-          borderRadius: '1px',
-          transform: 'rotate(45deg)',
-          boxShadow: '0 1px 2px rgba(0,0,0,0.2)'
+          bottom: '15%',
+          left: '25%',
+          width: '3px',
+          height: '60px',
+          background: 'linear-gradient(180deg, rgba(16, 185, 129, 0.4), rgba(16, 185, 129, 0.7))',
+          borderRadius: '2px',
+          transformOrigin: 'bottom',
+          animation: 'gentle-sway 4s ease-in-out infinite'
         }} />
 
         <div style={{
           position: 'absolute',
-          top: '48%',
-          right: '52%',
-          width: '12px',
-          height: '3px',
-          background: 'rgba(255, 255, 255, 0.6)',
-          borderRadius: '1px',
-          transform: 'rotate(-30deg)',
-          boxShadow: '0 1px 2px rgba(0,0,0,0.2)'
+          bottom: '12%',
+          right: '30%',
+          width: '3px',
+          height: '45px',
+          background: 'linear-gradient(180deg, rgba(16, 185, 129, 0.3), rgba(16, 185, 129, 0.6))',
+          borderRadius: '2px',
+          transformOrigin: 'bottom',
+          animation: 'gentle-sway 5s ease-in-out infinite 2s'
         }} />
+
+        <div style={{
+          position: 'absolute',
+          bottom: '10%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          width: '4px',
+          height: '70px',
+          background: 'linear-gradient(180deg, rgba(16, 185, 129, 0.5), rgba(16, 185, 129, 0.8))',
+          borderRadius: '2px',
+          transformOrigin: 'bottom',
+          animation: 'gentle-sway 4.5s ease-in-out infinite 1s'
+        }} />
+
+        {/* Dashboard-style depth layers */}
+        <div style={{
+          position: 'absolute',
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: '30%',
+          background: 'linear-gradient(180deg, transparent, rgba(30, 37, 48, 0.3))',
+          zIndex: 3
+        }} />
+
+        {/* Dashboard-style corner elements */}
+        <div style={{
+          position: 'absolute',
+          top: '20px',
+          right: '20px',
+          fontSize: '12px',
+          color: '#9ca3af',
+          fontWeight: '500',
+          fontFamily: 'monospace'
+        }}>
+          LIVE MONITORING
+        </div>
+
+        <div style={{
+          position: 'absolute',
+          bottom: '20px',
+          left: '20px',
+          fontSize: '11px',
+          color: '#6b7280',
+          fontFamily: 'monospace'
+        }}>
+          SYSTEM STATUS: ACTIVE
+        </div>
+
+        {/* Dashboard-style metric display */}
+        <div style={{
+          position: 'absolute',
+          top: '15%',
+          right: '15%',
+          background: 'rgba(30, 37, 48, 0.8)',
+          border: '1px solid #4b5563',
+          borderRadius: '8px',
+          padding: '12px 16px',
+          backdropFilter: 'blur(10px)'
+        }}>
+          <div style={{
+            fontSize: '24px',
+            fontWeight: '700',
+            color: '#3b82f6',
+            marginBottom: '4px'
+          }}>524.83</div>
+          <div style={{
+            fontSize: '12px',
+            color: '#9ca3af',
+            textTransform: 'uppercase'
+          }}>PARTICLES/ML</div>
+        </div>
       </div>
 
       <style>{`
-        @keyframes swim {
-          0%, 100% { transform: translateX(0px) translateY(0px); }
-          25% { transform: translateX(10px) translateY(-5px); }
-          50% { transform: translateX(20px) translateY(0px); }
-          75% { transform: translateX(10px) translateY(5px); }
+        @keyframes professional-pulse {
+          0%, 100% { 
+            opacity: 0.3;
+            transform: scale(1);
+          }
+          50% { 
+            opacity: 0.8;
+            transform: scale(1.1);
+          }
         }
-        @keyframes float {
-          0%, 100% { transform: translateY(0px) rotate(0deg); }
-          50% { transform: translateY(-10px) rotate(180deg); }
+        @keyframes data-scan {
+          0%, 100% { 
+            opacity: 0;
+            transform: translateX(-20px);
+          }
+          50% { 
+            opacity: 1;
+            transform: translateX(20px);
+          }
+        }
+        @keyframes warning-pulse {
+          0%, 100% { 
+            opacity: 0.6;
+            transform: scale(1);
+          }
+          50% { 
+            opacity: 1;
+            transform: scale(1.2);
+          }
+        }
+        @keyframes marine-drift {
+          0%, 100% { 
+            transform: translateX(0px) translateY(0px);
+            opacity: 0.6;
+          }
+          50% { 
+            transform: translateX(15px) translateY(-5px);
+            opacity: 0.9;
+          }
+        }
+        @keyframes gentle-sway {
+          0%, 100% { 
+            transform: rotate(-2deg);
+          }
+          50% { 
+            transform: rotate(2deg);
+          }
         }
         * {
           margin: 0;
